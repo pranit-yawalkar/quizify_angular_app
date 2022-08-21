@@ -8,9 +8,11 @@
       <a mat-list-item routerLink="/login" *ngIf="!isLoggedIn">Login</a>
       <a mat-list-item routerLink="/signup" *ngIf="!isLoggedIn">Signup</a>
       <a mat-list-item routerLink="/user-dashboard/quizzes" *ngIf="isLoggedIn">All Quizzes</a>
-      <a [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: category.cid}" mat-list-item
-        *ngFor="let category of categories">{{category.title}}
-      </a>
+      <div *ngIf="isLoggedIn">
+        <a [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: category.cid}" mat-list-item
+          *ngFor="let category of categories">{{category.title}}
+        </a>
+      </div>
       <a mat-list-item (click)="this.logout()" *ngIf="isLoggedIn">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
