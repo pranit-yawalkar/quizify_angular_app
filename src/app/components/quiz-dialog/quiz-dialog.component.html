@@ -1,0 +1,50 @@
+<h2>Quiz Form</h2>
+<div mat-dialog-content>
+    <form [formGroup]="quizForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Quiz title</mat-label>
+            <input formControlName="title" name="title" matInput placeholder="Enter category title here">
+            <mat-hint *ngIf="quizForm.get('title')?.invalid && quizForm.get('title')?.touched" class="text-danger">
+                This field
+                is required.</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Quiz Description</mat-label>
+            <textarea formControlName="description" name="description" rows="5" matInput
+                placeholder="Enter description here"></textarea>
+            <mat-hint *ngIf="quizForm.get('description')?.invalid && quizForm.get('description')?.touched"
+                class="text-danger">Min 6 charaters required.</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Maximum Marks</mat-label>
+            <input type="number" formControlName="maxMarks" matInput placeholder="Enter maximum marks here">
+            <mat-hint *ngIf="quizForm.get('maxMarks')?.invalid && quizForm.get('maxMarks')?.touched"
+                class="text-danger">
+                This field
+                is required.</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Number of Questions</mat-label>
+            <input type="number" formControlName="numberOfQuestions" matInput
+                placeholder="Enter number of questions here">
+            <mat-hint *ngIf="quizForm.get('numberOfQuestions')?.invalid && quizForm.get('numberOfQuestions')?.touched"
+                class="text-danger">
+                This field
+                is required.</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Select a Category</mat-label>
+            <mat-select name="categoryId" formControlName="categoryId">
+                <mat-option *ngFor="let category of categories" [value]="category.cid">{{category.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="active" name="active" class="example-margin" [color]="'primary'">
+            Active
+        </mat-slide-toggle>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'center'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">{{actionBtn}}</button>
+</div>

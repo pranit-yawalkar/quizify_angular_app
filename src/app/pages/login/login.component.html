@@ -1,0 +1,39 @@
+<div class="main-container">
+    <div class="container row mx-auto py-3">
+        <mat-card class="mx-auto px-4 col-lg-5 col-md-8 border shadow">
+            <div class="text-center">
+                <img src="../../../assets/images/quizify1.png" class="logo" alt="">
+            </div>
+            <h2 class="text-center">Login Here!!</h2>
+            <form [formGroup]="loginForm">
+
+                <!-- Username field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>User name</mat-label>
+                    <input formControlName="username" name="username" matInput placeholder="Enter username here">
+                    <mat-hint class="text-danger"
+                        *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">This
+                        field
+                        is required</mat-hint>
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" name="password" type="password" autocomplete="on" matInput
+                        placeholder="Enter password here">
+                    <mat-hint class="text-danger"
+                        *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">This
+                        field
+                        is required</mat-hint>
+                </mat-form-field>
+
+                <div class="text-center">
+                    <button (click)="formSubmit()" type="submit" class="m-3" mat-raised-button
+                        color="primary">Submit</button>
+                    <button class="m-3" mat-raised-button>Close</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

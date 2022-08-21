@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html,
+body {
+    height: 100%;
+    /* overflow: visible; */
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* overflow-x: hidden; */
+    background-color: var(--light);
+}
+
+:root {
+    --bg-light: rgb(218, 218, 218);
+    --light: #e8eaf6;
+    --light-bg: #e6e6fa;
+    --theme-color: #673ab7;
+}
+
+app-sidenav {
+    display: flex;
+}
+
+mat-drawer-container {
+    flex: 1 1 auto;
+}
+
+.main-container {
+    /* background-color: var(--light-bg); */
+    /* background-color: #F5F6F7; */
+    background-color: var(--light);
+}
+
+.top-right {
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.logo {
+    width: 70px;
+}

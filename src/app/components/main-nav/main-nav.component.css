@@ -1,0 +1,72 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.text-color {
+  color: var(--theme-color);
+  font-weight: 600;
+  color: #fff;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar {
+  /* background-color: #fff; */
+  background: rgb(124, 182, 255);
+  background: linear-gradient(90deg, rgba(124, 182, 255, 1) 0%, rgba(255, 160, 206, 1) 100%);
+  /* background: rgb(117, 179, 255);
+  background: linear-gradient(90deg, rgba(117, 179, 255, 1) 0%, rgba(125, 98, 255, 1) 100%); */
+  background: rgb(148, 117, 255);
+  background: linear-gradient(90deg, rgba(148, 117, 255, 1) 0%, rgba(98, 226, 255, 1) 100%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  background-image: linear-gradient(to right top, #080537, #142761, #1e498d, #206ebc, #1295eb);
+  background-image: linear-gradient(to right top, #6100a7, #572aba, #4a41cc, #3755dc, #1267eb);
+  background-image: linear-gradient(to right top, #0076a7, #0483bb, #0d90cf, #189ee3, #23abf8);
+  background-image: linear-gradient(to right top, #5b00a7, #3d45c8, #006be0, #008cef, #23abf8);
+  background-image: linear-gradient(to right top, #673ab3, #693ec5, #6942d8, #6747eb, #634cff);
+  background-image: linear-gradient(to right top, #673ab3, #6732c6, #6529d8, #611bec, #5b00ff);
+}
+
+.hidden {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar a {
+  display: inline-block;
+  /* color: #fff; */
+  color: #000;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.active {
+  /* background-color: #673ab7; */
+  background-color: #142761;
+  color: #fff;
+}
+
+/* @media screen and (min-width: 600px) {
+
+  .sidenav {
+    display: none;
+  }
+
+
+} */

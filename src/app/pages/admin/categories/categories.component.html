@@ -1,0 +1,39 @@
+<div class="heading d-flex p-3 justify-content-between">
+    <h2 class="text-center my-2">All Categories</h2>
+    <button class="my-2" mat-flat-button color="primary" (click)="addCategory()">Add new category</button>
+</div>
+<mat-card *ngIf="categories && categories.length > 0; else elseTemplate">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pt-3" *ngFor="let category of categories; let i=index">
+                <th class="pt-3" scope="row">{{i+1}}</th>
+                <td class="pt-3">{{category.title}}</td>
+                <td class="pt-3">{{category.description.substr(0,50)}}</td>
+                <td>
+                    <!-- <button (click)="updateCategory(category)" mat-icon-button color="accent"> -->
+                    <button mat-mini-fab color="accent" class="mx-2" (click)="updateCategory(category)">
+                        <mat-icon>edit_note</mat-icon>
+                    </button>
+                    <!-- <button (click)="deleteCategory(category)" mat-icon-button color="warn"> -->
+                    <button mat-mini-fab color="warn" class="mx-2 me-4" (click)="deleteCategory(category)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-card>
+<ng-template #elseTemplate>
+    <div class="text-center mt-4">
+        <mat-icon class="my-4" mat-list-icon style="transform: scale(3);">library_books</mat-icon>
+        <h2>No Categories to show</h2>
+    </div>
+</ng-template>

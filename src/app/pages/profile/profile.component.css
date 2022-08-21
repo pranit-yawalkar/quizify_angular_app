@@ -1,0 +1,21 @@
+.img-width {
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid var(--theme-color);
+    border-radius: 50%;
+}
+
+.table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.table th {
+    width: 40%;
+}
+
+.table tr td,
+.table tr th {
+    padding: 10px 20px;
+    border: 0.5px solid var(--theme-color);
+}

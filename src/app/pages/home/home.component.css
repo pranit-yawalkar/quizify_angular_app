@@ -1,0 +1,8 @@
+.container {
+    background-color: #fff;
+}
+
+.carousel-indicators {
+    margin: auto;
+    bottom: 0;
+}

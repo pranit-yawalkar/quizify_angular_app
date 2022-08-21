@@ -1,0 +1,5 @@
+.example-header-image {
+    /* background-image: url('../../../../assets/images/logo.jpeg'); */
+    background-size: cover;
+    margin-left: 10px;
+}

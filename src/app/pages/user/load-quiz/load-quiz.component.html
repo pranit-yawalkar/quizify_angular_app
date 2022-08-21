@@ -1,0 +1,38 @@
+<div class="container alternative">
+    <h1>Available Quizzes</h1>
+    <div class="row" *ngIf="quizzes && quizzes.length > 0; else elseTemplate">
+        <div class="col-md-4 col-sm-6" *ngFor="let quiz of quizzes">
+            <mat-card class="mb-3">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"
+                        [ngStyle]="{'background-image': 'url(../../../../assets/images/' + quiz.image + ')'}">
+                    </div>
+                    <mat-card-title>{{quiz.title}}</mat-card-title>
+                    <mat-card-subtitle>
+                        {{quiz.category.title}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{quiz.description.substr(0, 70)}}</p>
+                    <div class="text-center">
+                        <button mat-button class="mx-2" color="warn">No. of Questions:
+                            {{quiz.numberOfQuestions}}</button>
+                        <button mat-button class="mx-2" color="primary">Marks: {{quiz.maxMarks}}</button>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions class="text-center my-2">
+                    <button mat-flat-button class="mx-2" color="warn">View</button>
+                    <button mat-flat-button class="mx-2" color="primary" (click)="startQuiz(quiz.qid)">Start
+                        Quiz</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseTemplate>
+    <div class="text-center mt-4">
+        <mat-icon class="my-4" mat-list-icon style="transform: scale(3);">quiz</mat-icon>
+        <h2>No Quizzes to show</h2>
+    </div>
+</ng-template>

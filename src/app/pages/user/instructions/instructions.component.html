@@ -1,0 +1,37 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngIf="quiz">
+                <mat-card-header>
+                    <mat-card-title>{{quiz.title}} Quiz</mat-card-title>
+                    <mat-card-subtitle>
+                        {{quiz.description}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="ms-3">
+                    <h2>Important Instructions</h2>
+                    <p>Read the following instructions carefully.</p>
+                    <ul>
+                        <li>This quiz is for only practice purpose.</li>
+                        <li>Time duration for this quiz is <b>{{quiz.numberOfQuestions*2 }} minutes.</b></li>
+                        <li>You have to submit quiz with in time.</li>
+                        <li>There are <b>{{quiz.numberOfQuestions}} questions</b> in this quiz.</li>
+                        <li>Each question holds <b>{{quiz.maxMarks/quiz.numberOfQuestions}} marks.</b></li>
+                        <li>You have to answer all the questions to submit the quiz.</li>
+                        <li>Click on <b>Start Quiz</b> button to start your quiz.</li>
+                        <li>You can not resume this quiz, if it is interrupted due to any reason.</li>
+                        <li>Click on <b>Submit Test</b> button on the completion of the quiz.</li>
+                        <li>Report of the test is automatically generated in the form of PDF at the end of the quiz.
+                        </li>
+                    </ul>
+                </mat-card-content>
+                <mat-card-actions class="text-center my-2">
+                    <button mat-raised-button color="warn" routerLink="/user-dashboard/quizzes"
+                        [queryParams]="{category: 'all'}">&LeftArrow; Go
+                        Back</button>
+                    <button mat-raised-button color="primary" (click)="startQuiz(quiz.qid)">Start Quiz</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

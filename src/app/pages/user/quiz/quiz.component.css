@@ -1,0 +1,56 @@
+.content {
+    display: inline-block;
+}
+
+.result {
+    margin: 50px auto;
+
+}
+
+.timer {
+    position: relative;
+    top: -85px;
+    left: 30%;
+    font-size: 1.2rem;
+}
+
+
+@media screen and ((min-width: 768px) and (max-width: 1200px)) {
+
+    .rows {
+        flex-direction: column-reverse;
+
+    }
+
+    .cols {
+        width: 100%;
+    }
+
+    .timer {
+        left: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rows {
+        flex-direction: column-reverse;
+    }
+
+    .timer {
+        left: 42%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .timer {
+        left: 38%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .timer {
+        left: 30%;
+    }
+}

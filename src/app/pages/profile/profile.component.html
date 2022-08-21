@@ -1,0 +1,49 @@
+<mat-card>
+    <h2 class="text-center">Your Profile</h2>
+    <mat-card-content>
+        <div class="container">
+            <div class="container text-center">
+                <img class="img-width" src="https://180dc.org/wp-content/uploads/2016/08/default-profile.png"
+                    alt="profile-image">
+                <h3 class="mt-4">{{user.firstName}} {{user.lastName}}</h3>
+                <table class="table mx-auto">
+                    <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <th>UserId</th>
+                            <td>EXAM{{user.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>{{user.firstName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>{{user.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{user.phone}}</td>
+                        </tr>
+                        <tr>
+                            <th>Authority</th>
+                            <td>{{user.authorities[0].authority}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center my-3">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="accent">Update</button>
+    </mat-card-actions>
+</mat-card>

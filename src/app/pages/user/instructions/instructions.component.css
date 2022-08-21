@@ -1,0 +1,11 @@
+@media screen and (max-width: 720px) {
+    .content {
+        margin: 10px 0;
+    }
+}
+
+@media ((min-width: 950px) and (max-width: 1000px)) {
+    .content {
+        margin: 10px 0;
+    }
+}

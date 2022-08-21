@@ -1,0 +1,8 @@
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: inline-block;
+}

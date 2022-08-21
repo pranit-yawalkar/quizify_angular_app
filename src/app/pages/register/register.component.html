@@ -1,0 +1,99 @@
+<div class="main-container">
+    <div class="container row mx-auto py-3">
+        <mat-card class="mx-auto px-4 col-lg-5 col-md-8 border shadow">
+            <div class="text-center">
+                <img src="../../../assets/images/quizify1.png" class="logo" alt="">
+            </div>
+            <h2 class="text-center">Register Here!!</h2>
+            <form [formGroup]="registerForm">
+                <!-- First Name field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input formControlName="firstName" name="firstName" matInput placeholder="Enter first name here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid">This
+                        field
+                        is required</mat-hint>
+                </mat-form-field>
+
+                <!-- Last Name field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input formControlName="lastName" name="lastName" matInput placeholder="Enter last name here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">This
+                        field
+                        is required</mat-hint>
+                </mat-form-field>
+
+                <!-- Email field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" name="email" type="email" matInput placeholder="Enter email here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('email')?.touched && myError('email', 'required')">
+                        This field is
+                        required
+                    </mat-hint>
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('email')?.touched && myError('email', 'email')">
+                        Email is not valid
+                    </mat-hint>
+                </mat-form-field>
+
+                <!-- Username field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>User name</mat-label>
+                    <input formControlName="username" name="username" matInput placeholder="Enter username here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('username')?.touched && myError('username', 'required')">This field is
+                        required
+                    </mat-hint>
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('username')?.touched && myError('username', 'minlength')">Username must
+                        contain min 5 characters
+                    </mat-hint>
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" name="password" type="password" autocomplete="on" matInput
+                        placeholder="Enter password here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('password')?.touched && myError('password', 'required')">This field is
+                        required
+                    </mat-hint>
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('password')?.touched && myError('password', 'pattern')">Password must
+                        contain min 8 character with at least one lower case, one upper case, one digit and one speacial
+                        character.
+                    </mat-hint>
+                </mat-form-field>
+
+                <!-- Contact Number field -->
+                <mat-form-field class="w-100 mx-auto" appearance="outline">
+                    <mat-label>Contact Number</mat-label>
+                    <input formControlName="phone" name="phone" type="number" matInput
+                        placeholder="Enter contact number here">
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('phone')?.touched && myError('phone', 'required')">
+                        This field is
+                        required
+                    </mat-hint>
+                    <mat-hint class="text-danger"
+                        *ngIf="registerForm.get('phone')?.touched && (myError('phone', 'minlength') || myError('phone', 'maxlength'))">
+                        Please enter valid
+                        phone number
+                    </mat-hint>
+                </mat-form-field>
+
+                <div class="text-center">
+                    <button (click)="formSubmit()" type="submit" class="m-3" mat-raised-button
+                        color="primary">Submit</button>
+                    <button class="m-3" mat-raised-button (click)="resetForm()">Clear</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

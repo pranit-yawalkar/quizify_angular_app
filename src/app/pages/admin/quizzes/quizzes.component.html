@@ -1,0 +1,55 @@
+<!-- <mat-card> -->
+<div class="container py-2 d-flex justify-content-between">
+    <h2 class="my-2">All Quizzes</h2>
+    <button class="my-2" mat-raised-button color="primary" (click)="addQuiz()">Add new quiz</button>
+</div>
+<div *ngIf="quizzes && quizzes.length>0;else elseTemplate">
+    <mat-card class="mb-3" *ngFor="let quiz of quizzes">
+        <div class="d-flex justify-content-between">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"
+                    [ngStyle]="{'background-image': 'url(../../../../assets/images/' + quiz.image + ')'}">
+                </div>
+                <div>
+                    <div class="d-flex mb-1">
+                        <mat-card-title>{{quiz.title}}</mat-card-title>
+                        <mat-icon *ngIf="quiz.active" class="mx-2 text-success">task_alt</mat-icon>
+                        <mat-icon *ngIf="!quiz.active" class="mx-2 text-danger">do_not_disturb_off</mat-icon>
+                    </div>
+                    <mat-card-subtitle *ngIf="quiz.category">{{quiz.category.title}}</mat-card-subtitle>
+                </div>
+            </mat-card-header>
+            <mat-card-actions class="d-flex justify-content-between">
+                <div class="actions">
+                    <button mat-mini-fab color="accent" class="mx-2" (click)="updateQuiz(quiz)">
+                        <mat-icon>edit_note</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="warn" class="mx-2 me-4" (click)="deleteQuiz(quiz)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </mat-card-actions>
+        </div>
+        <mat-card-content>
+            <p>{{quiz.description}}</p>
+        </mat-card-content>
+
+        <div>
+            <button mat-button color="primary" class="me-2"
+                [routerLink]="'/admin/questions/' + quiz.qid + '/' + quiz.title">Questions:
+                {{quiz.numberOfQuestions}}</button>
+            <button mat-button color="primary" class="ms-2">Max Marks: {{quiz.maxMarks}}</button>
+            <button mat-button color="primary" class="ms-2">Attempts: </button>
+        </div>
+
+    </mat-card>
+</div>
+
+<ng-template #elseTemplate>
+    <div class="text-center mt-4">
+        <mat-icon class="my-4" mat-list-icon style="transform: scale(3);">quiz</mat-icon>
+        <h2>No Quizzes to show</h2>
+    </div>
+</ng-template>
+
+<!-- </mat-card> -->

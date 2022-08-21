@@ -1,0 +1,98 @@
+<div class="my-2" *ngIf="!isSubmitted; else elseTemplate">
+    <div class="container-fluid">
+        <div class="row rows">
+            <div class="col-md-2 cols">
+                <mat-card class="mt-5">
+                    <mat-card-header>
+                        <h2>Instructions</h2>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <ul>
+                            <li>Do not refresh the page, otherwise you will get new questions to solve.</li>
+                            <li>Do not switch the tabs.</li>
+                            <li>Do not minimise the window</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-7 cols">
+                <ng-container *ngIf="questions">
+                    <h2>Quiz on: <b>{{questions[0].quiz.title}}</b></h2>
+                </ng-container>
+                <mat-card *ngFor="let question of questions; let i=index" class="my-2">
+                    <mat-card-header>
+                        <mat-card-content class="content">
+                            <p><b>Q.{{i+1}}.</b> <span class="ms-2 content" [innerHTML]="question.content"></span></p>
+                            <mat-radio-group [(ngModel)]="question.givenAnswer"
+                                class="row d-flex justify-content-between">
+                                <mat-radio-button color="primary" class="col-md-6 my-2" [value]="question.options[0]"
+                                    [name]="i.toString()">
+                                    {{question.options[0]}}
+                                </mat-radio-button>
+                                <mat-radio-button color="primary" class="col-md-6 my-2" [value]="question.options[1]"
+                                    [name]="i.toString()">
+                                    {{question.options[1]}}
+                                </mat-radio-button>
+                                <mat-radio-button color="primary" class="col-md-6 my-2" [value]="question.options[2]"
+                                    [name]="i.toString()">
+                                    {{question.options[2]}}
+                                </mat-radio-button>
+                                <mat-radio-button color="primary" class="col-md-6 my-2" [value]="question.options[3]"
+                                    [name]="i.toString()">
+                                    {{question.options[3]}}
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </mat-card-content>
+                    </mat-card-header>
+                </mat-card>
+                <div class="container pt-3 text-center">
+                    <button mat-raised-button color="warn" (click)="submitQuiz()">Submit Quiz</button>
+                </div>
+            </div>
+            <div class="col-md-2 mt-5 cols">
+                <mat-card>
+                    <mat-card-header>
+                        <h2 class="text-center">Time Remaining: </h2>
+                        <!-- <mat-card-subtitle>Timer is running...</mat-card-subtitle> -->
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <mat-spinner [diameter]="150" mode="determinate" [value]="percent" [color]="color"
+                                class="mx-auto"></mat-spinner>
+                            <div class="timer">
+                                {{getFormattedDate()}}</div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseTemplate>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 result">
+                <mat-card class="border shadow">
+                    <h1 class="text-center">Quiz Results</h1>
+                    <mat-divider></mat-divider>
+                    <mat-card-content class="w-60 mx-auto py-3">
+
+                        <h2 class="d-flex justify-content-between">Total Questions: &Tab;<span
+                                class="text-danger">{{this.questions.length}}</span></h2>
+                        <h2 class="d-flex justify-content-between">Questions Attempted: &Tab;<span
+                                class="text-danger">{{questionsAttempted}}</span></h2>
+                        <h2 class="d-flex justify-content-between">Correct Answers: &Tab;<span
+                                class="text-danger">{{correctAnswers}}</span></h2>
+                        <h2 class="d-flex justify-content-between">Total Marks: &Tab;<span
+                                class="text-danger">{{marksGot}}</span></h2>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center my-3">
+                        <button mat-raised-button color="warn" routerLink="/user-dashboard/quizzes">Go To Home</button>
+                        <button mat-raised-button color="primary" (click)="printResult()">Print Result</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</ng-template>
