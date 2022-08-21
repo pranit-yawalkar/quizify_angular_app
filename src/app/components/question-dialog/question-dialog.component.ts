@@ -8,7 +8,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 import { QuizDialogComponent } from '../quiz-dialog/quiz-dialog.component';
 import swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
-import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
+// import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-question-dialog',
@@ -16,7 +16,7 @@ import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./question-dialog.component.css']
 })
 export class QuestionDialogComponent implements OnInit {
-  public Editor = ClassicEditorBuild;
+  // public Editor = ClassicEditorBuild;
   actionBtn: string = 'Submit';
   questionForm!: FormGroup;
   qid!: string | null;

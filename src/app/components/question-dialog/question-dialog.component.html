@@ -1,20 +1,20 @@
 <h2>Question Form</h2>
 <div mat-dialog-content>
     <form [formGroup]="questionForm">
-        <!-- <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline">
             <mat-label>Question Content</mat-label>
             <textarea formControlName="content" name="content" rows="5" matInput
                 placeholder="Enter question content here"></textarea>
             <mat-hint *ngIf="questionForm.get('content')?.invalid && questionForm.get('content')?.touched"
                 class="text-danger">Min 6 charaters required.</mat-hint>
-        </mat-form-field> -->
-        <div class="mb-3">
+        </mat-form-field>
+        <!-- <div class="mb-3">
             <label for="content">Question Content</label>
             <ckeditor id="content" [editor]="Editor" name="content" formControlName="content">
             </ckeditor>
             <small *ngIf="questionForm.get('content')?.invalid && questionForm.get('content')?.touched"
                 class="text-danger">Min 6 charaters required.</small>
-        </div>
+        </div> -->
 
         <mat-form-field appearance="outline">
             <mat-label>Options 1</mat-label>
