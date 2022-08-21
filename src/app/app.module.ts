@@ -26,7 +26,6 @@ import { QuizzesComponent } from './pages/admin/quizzes/quizzes.component';
 import { QuizDialogComponent } from './components/quiz-dialog/quiz-dialog.component';
 import { QuestionsComponent } from './pages/admin/questions/questions.component';
 import { QuestionDialogComponent } from './components/question-dialog/question-dialog.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserSidebarComponent } from './components/user-sidebar/user-sidebar.component';
 import { UserHomeComponent } from './pages/user/user-home/user-home.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
@@ -72,7 +71,6 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     ToastrModule.forRoot(),
     HttpClientModule,
     LayoutModule,
-    CKEditorModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true
