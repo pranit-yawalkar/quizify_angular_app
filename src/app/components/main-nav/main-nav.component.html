@@ -11,7 +11,7 @@
       <a [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: category.cid}" mat-list-item
         *ngFor="let category of categories">{{category.title}}
       </a>
-      <a mat-list-item routerLink="/signup" *ngIf="isLoggedIn">Logout</a>
+      <a mat-list-item (click)="this.logout()" *ngIf="isLoggedIn">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
