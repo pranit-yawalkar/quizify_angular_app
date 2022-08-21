@@ -13,7 +13,7 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   public getQuizzes(): Observable<Object> {
-    return this.http.get(`${this.BASE_URL}/quiz`);
+    return this.http.get(`${this.BASE_URL}/quiz/getAll`);
   }
 
   public getQuizzesByCategory(categoryId: number): Observable<Object> {

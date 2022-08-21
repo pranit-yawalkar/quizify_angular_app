@@ -33,11 +33,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'user-dashboard', component: UserDashboardComponent, canActivate: [NormalGuard], children: [
-      { path: '', component: UserHomeComponent },
+    path: 'user-dashboard', component: UserDashboardComponent, children: [
+      { path: '', component: UserHomeComponent, canActivate: [NormalGuard] },
       { path: 'quizzes', component: LoadQuizComponent },
-      { path: 'instructions/:quizId', component: InstructionsComponent },
-
+      { path: 'instructions/:quizId', component: InstructionsComponent, canActivate: [NormalGuard] },
     ]
   },
   { path: 'quiz/start/:quizId', component: QuizComponent, canActivate: [NormalGuard] }

@@ -1,13 +1,15 @@
-<mat-card *ngIf="!(isHandset$ | async)">
-    <mat-action-list>
-        <div mat-subheader>Dashboard</div>
-        <button mat-list-item [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: 'all'}">
-            <mat-icon mat-list-icon>format_list_bulleted</mat-icon><span>All Quizzes</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: category.cid}" mat-list-item
-            *ngFor="let category of categories">
-            <mat-icon mat-list-icon>quiz</mat-icon><span>{{category.title}}</span>
-        </button>
-    </mat-action-list>
-</mat-card>
+<div class="main-container">
+    <mat-card *ngIf="!(isHandset$ | async)">
+        <mat-action-list>
+            <div mat-subheader>Dashboard</div>
+            <button mat-list-item [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: 'all'}">
+                <mat-icon mat-list-icon>format_list_bulleted</mat-icon><span>All Quizzes</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button [routerLink]="['/user-dashboard/quizzes']" [queryParams]="{category: category.cid}" mat-list-item
+                *ngFor="let category of categories">
+                <mat-icon mat-list-icon>quiz</mat-icon><span>{{category.title}}</span>
+            </button>
+        </mat-action-list>
+    </mat-card>
+</div>

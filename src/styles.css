@@ -12,6 +12,7 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     /* overflow-x: hidden; */
     background-color: var(--light);
+    padding-bottom: 10em;
 }
 
 :root {
@@ -33,6 +34,7 @@ mat-drawer-container {
     /* background-color: var(--light-bg); */
     /* background-color: #F5F6F7; */
     background-color: var(--light);
+    padding-bottom: 10em;
 }
 
 .top-right {

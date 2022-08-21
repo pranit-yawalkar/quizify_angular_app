@@ -13,7 +13,7 @@ export class CategoryService {
 
   // Load all the categories
   public getAllCategories(): Observable<Object> {
-    return this.http.get(`${this.BASE_URL}/category`);
+    return this.http.get(`${this.BASE_URL}/category/getAll`);
   }
 
   // get category by id 

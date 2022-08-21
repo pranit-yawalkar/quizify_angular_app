@@ -32,6 +32,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    * {
+        overflow-x: hidden;
+    }
+
     .rows {
         flex-direction: column-reverse;
     }
@@ -39,6 +43,7 @@
     .timer {
         left: 42%;
     }
+
 }
 
 @media screen and (max-width: 500px) {
