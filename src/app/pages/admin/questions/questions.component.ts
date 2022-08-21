@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
 import { QuestionDialogComponent } from 'src/app/components/question-dialog/question-dialog.component';
 import { QuestionService } from 'src/app/services/question.service';
 import swal from 'sweetalert2'
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-questions',
@@ -13,7 +12,6 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  public Editor = ClassicEditor;
   qid!: number;
   qtitle!: string;
   questions!: any;
