@@ -33,7 +33,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { QuizComponent } from './pages/user/quiz/quiz.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { MatCarouselModule } from 'ng-mat-carousel';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -59,7 +59,7 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     UserHomeComponent,
     LoadQuizComponent,
     InstructionsComponent,
-    QuizComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +75,8 @@ import { MatCarouselModule } from 'ng-mat-carousel';
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true
     }),
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    NgbModule
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]

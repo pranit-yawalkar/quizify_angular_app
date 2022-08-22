@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -9,15 +11,24 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   slides: any = [
-    { image: 'https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg' },
+    { image: '../../../assets/images/carousel/c1.jpg', title: 'Quizify', desc: 'A platform to test yourself.' },
 
-    { image: 'https://static-cse.canva.com/blob/572626/1.magebyRodionKutsaevviaUnsplash.jpg' }
+    { image: '../../../assets/images/carousel/c2.jpg', title: 'Quizify', desc: 'A platform to test yourself.' },
+    { image: '../../../assets/images/carousel/c3.jpg', title: 'Quizify', desc: 'A platform to test yourself.' },
+    { image: '../../../assets/images/carousel/c4.jpg', title: 'Quizify', desc: 'A platform to test yourself.' },
   ]
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 
 }
+
+
+
+
+
+

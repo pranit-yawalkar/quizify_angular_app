@@ -1,8 +1,67 @@
 .container {
     background-color: #fff;
+    width: 90%;
+}
+
+/* 
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: auto;
 }
 
 .carousel-indicators {
     margin: auto;
     bottom: 0;
+}
+
+.carousel {
+    margin: auto;
+    width: 90%;
+}
+
+.carousel-item {
+
+    height: 32rem;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.btn-color {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+.heading h1 {
+    font-size: 2rem;
+}
+
+.heading h5 {
+    font-size: 1.2rem;
+}
+
+
+.bg-container {
+    width: 100%;
+    height: 40%;
+    min-height: 650px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../assets/images/carousel/c1.jpg');
+    /* filter: brightness(50%); */
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .bg-container {
+        height: 500px;
+    }
 }
